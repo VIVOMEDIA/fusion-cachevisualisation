@@ -1,0 +1,15 @@
+TYPO3:
+  Neos:
+    typoScript:
+      autoInclude:
+        'VIVOMEDIA.TypoScript.CacheVisualisation': TRUE
+
+VIVOMEDIA:
+  TypoScript:
+    CacheVisualisation:
+      enabled: FALSE
+      output:
+        wrapperClassName: 'vivomedia-cachevisualisation'
+        itemClassName:
+          cached: 'vivomedia-cachevisualisation-cached'
+          uncached: 'vivomedia-cachevisualisation-uncached'

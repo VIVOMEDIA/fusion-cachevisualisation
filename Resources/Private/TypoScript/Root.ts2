@@ -1,0 +1,8 @@
+prototype(TYPO3.Neos:Page){
+  head {
+    cacheVisualisation = TYPO3.TypoScript:Tag {
+      tagName = 'style'
+      content = ${'Fooo'}
+    }
+  }
+}
