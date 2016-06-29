@@ -1,0 +1,4 @@
+VIVOMEDIA:
+  TypoScript:
+    CacheVisualisation:
+      enabled: TRUE

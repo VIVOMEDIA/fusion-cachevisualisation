@@ -1,0 +1,13 @@
+{
+	"name" : "vivomedia.typoscript/cachevisualisation",
+	"type" : "typo3-flow-package",
+	"description" : "Add description here",
+	"require" : {
+		"typo3/typoscript" : "2.2.*"
+	},
+	"autoload" : {
+		"psr-0" : {
+			"VIVOMEDIA\\TypoScript\\CacheVisualisation" : "Classes"
+		}
+	}
+}
