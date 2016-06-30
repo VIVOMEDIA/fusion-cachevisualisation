@@ -19,7 +19,7 @@ Uncached Segments
 ## Composer
 Install via composer as a dev package
 ```bash
-php composer.phar require --dev "vivomedia/typoscript-cachevisualisation" "~0.2"
+php composer.phar require --dev "vivomedia/typoscript-cachevisualisation" "~0.3"
 ```
 
 ## Flow
