@@ -9,13 +9,14 @@ prototype(TYPO3.Neos:Page){
         }
       }
     }
+  }
 
-    cacheVisualisationJs = TYPO3.TypoScript:Tag {
-      tagName = 'script'
-      attributes {
-        src = TYPO3.TypoScript:ResourceUri {
-          path = 'resource://VIVOMEDIA.TypoScript.CacheVisualisation/Public/js/cachevisualisation.js'
-        }
+  cacheVisualisationJs = TYPO3.TypoScript:Tag {
+    @position = 'before closingBodyTag'
+    tagName = 'script'
+    attributes {
+      src = TYPO3.TypoScript:ResourceUri {
+        path = 'resource://VIVOMEDIA.TypoScript.CacheVisualisation/Public/js/cachevisualisation.js'
       }
     }
   }
