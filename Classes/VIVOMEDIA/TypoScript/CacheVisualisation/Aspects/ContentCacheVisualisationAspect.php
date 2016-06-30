@@ -34,12 +34,13 @@ class ContentCacheVisualisationAspect
     {
         $content = $joinPoint->getMethodArgument('content');
         $path = $joinPoint->getMethodArgument('typoScriptPath');
+        $lifetime = $joinPoint->getMethodArgument('lifetime') ? (new \DateTime)->setTimestamp($joinPoint->getMethodArgument('lifetime'))->format('U = c') : 'null';
 
         if (!$this->_checkBlacklistedPath($path)) {
             $parameter = [
                 'path' => $path,
                 'tags' => implode(',', $joinPoint->getMethodArgument('tags')),
-                'lifetime' => $joinPoint->getMethodArgument('lifetime')
+                'lifetime' => $lifetime
             ];
             $content = $this->_wrapContent(self::TYPE_CACHED, $content, $parameter);
 
@@ -63,7 +64,7 @@ class ContentCacheVisualisationAspect
                 'path' => $path,
                 'context' => array_keys($joinPoint->getMethodArgument('contextVariables'))
             ];
-            $content = $this->_wrapContent(self::TYPE_CACHED, $content, $parameter);
+            $content = $this->_wrapContent(self::TYPE_UNCACHED, $content, $parameter);
         }
         return $content;
     }
