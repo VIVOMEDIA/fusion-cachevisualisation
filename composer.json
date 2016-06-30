@@ -1,7 +1,8 @@
 {
-	"name" : "vivomedia.typoscript/cachevisualisation",
+	"name" : "vivomedia/typoscript-cachevisualisation",
 	"type" : "typo3-flow-package",
-	"description" : "Add description here",
+	"description" : "Tool to debug cache configurations in Neos TypoScript",
+  "license": "MIT",
 	"require" : {
 		"typo3/typoscript" : "2.2.*"
 	},
