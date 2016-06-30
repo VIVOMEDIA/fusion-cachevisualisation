@@ -9,7 +9,7 @@
     }
   ],
   "require": {
-    "typo3/typoscript": "2.2.* || dev-master"
+    "typo3/typoscript": "*"
   },
   "autoload": {
     "psr-0": {
