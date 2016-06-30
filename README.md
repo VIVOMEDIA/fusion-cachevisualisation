@@ -28,6 +28,9 @@ After install clear the content cache of your flow/neos application.
 ./flow flow:cache:flush --force
 ```
 
+## jQuery
+The plugin uses jQuery. Please ensure that it's loaded early enough.
+
 # Configuration
 You can enable and disable the plugin within you `settings.yaml`
 
