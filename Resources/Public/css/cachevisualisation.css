@@ -1,0 +1,50 @@
+.vivomedia-cachevisualisation {
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.vivomedia-cachevisualisation.vivomedia-cachevisualisation-cached {
+  border: 2px solid green;
+}
+
+.vivomedia-cachevisualisation.vivomedia-cachevisualisation-uncached {
+  border: 2px solid red;
+}
+
+.vivomedia-cachevisualisation.vivomedia-cachevisualisation-cached > .data-container {
+  background-color: green;
+}
+
+.vivomedia-cachevisualisation.vivomedia-cachevisualisation-uncached > .data-container {
+  background-color: red;
+}
+
+.vivomedia-cachevisualisation .data-container {
+  display: none;
+  background: transparent none repeat scroll 0 0;
+
+  color: white;
+  padding: 10px;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: auto;
+
+  z-index: 9999;
+  width: 100%;
+  min-height: 100px;
+  text-align: left;
+}
+
+.vivomedia-cachevisualisation .data-container p, .vivomedia-cachevisualisation .data-container ul li {
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+}
+
+.vivomedia-cachevisualisation .data-container ul {
+  margin: 0;
+  padding: 0;
+  padding-left: 12px;
+}

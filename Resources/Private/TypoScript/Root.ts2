@@ -1,8 +1,22 @@
 prototype(TYPO3.Neos:Page){
   head {
-    cacheVisualisation = TYPO3.TypoScript:Tag {
-      tagName = 'style'
-      content = ${'Fooo'}
+    cacheVisualisationCss = TYPO3.TypoScript:Tag {
+      tagName = 'link'
+      attributes {
+        rel = ${'stylesheet'}
+        href = TYPO3.TypoScript:ResourceUri {
+          path = 'resource://VIVOMEDIA.TypoScript.CacheVisualisation/Public/css/cachevisualisation.css'
+        }
+      }
+    }
+
+    cacheVisualisationJs = TYPO3.TypoScript:Tag {
+      tagName = 'script'
+      attributes {
+        src = TYPO3.TypoScript:ResourceUri {
+          path = 'resource://VIVOMEDIA.TypoScript.CacheVisualisation/Public/js/cachevisualisation.js'
+        }
+      }
     }
   }
 }
