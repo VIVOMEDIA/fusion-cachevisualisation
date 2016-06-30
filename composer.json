@@ -1,14 +1,19 @@
 {
-	"name" : "vivomedia/typoscript-cachevisualisation",
-	"type" : "typo3-flow-package",
-	"description" : "Tool to debug cache configurations in Neos TypoScript",
+  "name": "vivomedia/typoscript-cachevisualisation",
+  "type": "typo3-flow-package",
+  "description": "Tool to debug cache configurations in Neos TypoScript",
   "license": "MIT",
-	"require" : {
-		"typo3/typoscript" : "2.2.*"
-	},
-	"autoload" : {
-		"psr-0" : {
-			"VIVOMEDIA\\TypoScript\\CacheVisualisation" : "Classes"
-		}
-	}
+  "authors": [
+    {
+      "name": "Denny Lubitz"
+    }
+  ],
+  "require": {
+    "typo3/typoscript": "2.2.*"
+  },
+  "autoload": {
+    "psr-0": {
+      "VIVOMEDIA\\TypoScript\\CacheVisualisation": "Classes"
+    }
+  }
 }
