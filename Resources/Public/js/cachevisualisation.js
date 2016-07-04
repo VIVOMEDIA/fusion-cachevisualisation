@@ -19,8 +19,6 @@ $(document).ready(function () {
     var data = wrapper.data('vivomedia-cache-visualisation');
     $.each(data, function(key, value){
       dataContainer.append($('<label />').text(key));
-      console.log(value);
-      console.log($.isArray(value));
       if ($.isArray(value)) {
         var list = $('<ul />');
         $.each(value, function(arrayKey, arrayValue) {
