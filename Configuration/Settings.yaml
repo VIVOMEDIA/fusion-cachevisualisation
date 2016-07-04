@@ -13,3 +13,9 @@ VIVOMEDIA:
         itemClassName:
           cached: 'vivomedia-cachevisualisation-cached'
           uncached: 'vivomedia-cachevisualisation-uncached'
+      pathBlacklist:
+        - 'root'
+        - 'root<TYPO3.TypoScript:Case>/default'
+        - 'root<TYPO3.TypoScript:Case>/default<TYPO3.TypoScript:Matcher>/element<TYPO3.Neos.NodeTypes:Page.Document>'
+        - 'root<TYPO3.TypoScript:Case>/default<TYPO3.TypoScript:Matcher>/element<TYPO3.Neos.NodeTypes:Page.Document>/head<TYPO3.TypoScript:Array>/neosBackendEndpoints'
+        - 'root<TYPO3.TypoScript:Case>/default<TYPO3.TypoScript:Matcher>/element<TYPO3.Neos.NodeTypes:Page.Document>/head<TYPO3.TypoScript:Array>/neosBackendHeader'

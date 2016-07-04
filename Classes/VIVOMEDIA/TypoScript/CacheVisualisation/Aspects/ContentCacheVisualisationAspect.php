@@ -81,11 +81,7 @@ class ContentCacheVisualisationAspect
 
     private function _checkBlacklistedPath($path)
     {
-        // TODO: mv to config
-        $blacklist = [
-            'root',
-            'root<TYPO3.TypoScript:Case>/default<TYPO3.TypoScript:Matcher>/element<TYPO3.Neos.NodeTypes:Page.Document>'
-        ];
+        $blacklist = $this->_configuration['pathBlacklist'];
         return in_array($path, $blacklist);
     }
 }
