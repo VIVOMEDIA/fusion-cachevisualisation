@@ -8,6 +8,7 @@ prototype(TYPO3.Neos:Page){
           path = 'resource://VIVOMEDIA.TypoScript.CacheVisualisation/Public/css/cachevisualisation.css'
         }
       }
+      @if.onlyRenderNotInBackend = ${!node.context.inBackend}
     }
   }
 
@@ -19,5 +20,6 @@ prototype(TYPO3.Neos:Page){
         path = 'resource://VIVOMEDIA.TypoScript.CacheVisualisation/Public/js/cachevisualisation.js'
       }
     }
+    @if.onlyRenderNotInBackend = ${!node.context.inBackend}
   }
 }
