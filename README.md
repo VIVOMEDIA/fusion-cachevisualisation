@@ -4,7 +4,7 @@ Helps to debug cache configurations in [Neos TypoScript](https://github.com/neos
 This is just a debugging tool and highly recommended just to use in development context.
 
 ## What it provides
-This plugin add a wrapper around all cached and uncached segments to visualise them. Also it provides addional informations for each segement:
+This plugin add a wrapper around all cached and uncached segments to visualise them. Also it provides additional informations for each segement:
 
 Cached Segments
 * TypoScript path
@@ -32,7 +32,7 @@ After install clear the content cache of your flow/neos application.
 The plugin uses jQuery. Please ensure that it's loaded early enough.
 
 # Configuration
-You can enable and disable the plugin within you `settings.yaml`
+You can enable and disable the plugin within you `Settings.yaml`
 
 ```yaml
 VIVOMEDIA:
