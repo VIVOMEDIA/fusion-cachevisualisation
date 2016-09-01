@@ -32,7 +32,7 @@ After install clear the content cache of your flow/neos application.
 The plugin uses jQuery. Please ensure that it's loaded early enough.
 
 # Configuration
-You can enable and disable the plugin within you `Settings.yaml`
+You can enable and disable the plugin within your `Settings.yaml`
 
 ```yaml
 VIVOMEDIA:
