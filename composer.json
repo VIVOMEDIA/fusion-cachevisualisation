@@ -1,7 +1,7 @@
 {
-  "name": "vivomedia/typoscript-cachevisualisation",
-  "type": "typo3-flow-package",
-  "description": "Tool to debug cache configurations in Neos TypoScript",
+  "name": "vivomedia/fusion-cachevisualisation",
+  "type": "neos-plugin",
+  "description": "Tool to debug cache configurations in Neos Fusion",
   "license": "MIT",
   "authors": [
     {
@@ -9,11 +9,15 @@
     }
   ],
   "require": {
-    "typo3/typoscript": "*"
+    "neos/flow": "^4.0.0",
+    "neos/fusion": "^3.0.0"
+  },
+  "replace": {
+    "vivomedia/typoscript-cachevisualisation": "self.version"
   },
   "autoload": {
-    "psr-0": {
-      "VIVOMEDIA\\TypoScript\\CacheVisualisation": "Classes"
+    "psr-4": {
+      "VIVOMEDIA\\Fusion\\CacheVisualisation\\": "Classes"
     }
   }
 }
