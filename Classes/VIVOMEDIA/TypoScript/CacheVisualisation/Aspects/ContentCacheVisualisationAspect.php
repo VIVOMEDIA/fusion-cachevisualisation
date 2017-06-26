@@ -34,7 +34,13 @@ class ContentCacheVisualisationAspect
     {
         $content = $joinPoint->getMethodArgument('content');
         $path = $joinPoint->getMethodArgument('typoScriptPath');
-        $lifetime = $joinPoint->getMethodArgument('lifetime') ? (new \DateTime)->setTimestamp($joinPoint->getMethodArgument('lifetime'))->format('U = c') : 'null';
+
+        $lifetime = null;
+        if ($joinPoint->getMethodArgument('lifetime')) {
+            $lifetime = (new \DateTime)->modify(
+                sprintf('+%d seconds',$joinPoint->getMethodArgument('lifetime'))
+            )->format('U = c');
+        }
 
         if (!$this->_checkBlacklistedPath($path)) {
             $parameter = [
