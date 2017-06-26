@@ -1,15 +1,21 @@
-TYPO3:
+Neos:
   Neos:
-    typoScript:
+    fusion:
       autoInclude:
-        'VIVOMEDIA.TypoScript.CacheVisualisation': TRUE
+        'VIVOMEDIA.Fusion.CacheVisualisation': true
 
 VIVOMEDIA:
-  TypoScript:
+  Fusion:
     CacheVisualisation:
-      enabled: FALSE
+      enabled: false
       output:
         wrapperClassName: 'vivomedia-cachevisualisation'
         itemClassName:
           cached: 'vivomedia-cachevisualisation-cached'
           uncached: 'vivomedia-cachevisualisation-uncached'
+      pathBlacklist:
+        - 'root'
+        - 'root<Neos.Fusion:Case>/default'
+        - 'root<Neos.Fusion:Case>/default<Neos.Fusion:Matcher>/element<Neos.NodeTypes:Page.Document>'
+        - 'root<Neos.Fusion:Case>/default<Neos.Fusion:Matcher>/element<Neos.NodeTypes:Page.Document>/head<Neos.Fusion:Array>/neosBackendEndpoints'
+        - 'root<Neos.Fusion:Case>/default<Neos.Fusion:Matcher>/element<Neos.NodeTypes:Page.Document>/head<Neos.Fusion:Array>/neosBackendHeader'

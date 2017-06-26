@@ -1,4 +1,4 @@
 VIVOMEDIA:
-  TypoScript:
+  Fusion:
     CacheVisualisation:
-      enabled: TRUE
+      enabled: true

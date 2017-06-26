@@ -1,0 +1,25 @@
+prototype(Page){
+  head {
+    cacheVisualisationCss = Neos.Fusion:Tag {
+      tagName = 'link'
+      attributes {
+        rel = ${'stylesheet'}
+        href = Neos.Fusion:ResourceUri {
+          path = 'resource://VIVOMEDIA.Fusion.CacheVisualisation/Public/css/cachevisualisation.css'
+        }
+      }
+      @if.onlyRenderNotInBackend = ${!node.context.inBackend}
+    }
+  }
+
+  cacheVisualisationJs = Neos.Fusion:Tag {
+    @position = 'before closingBodyTag'
+    tagName = 'script'
+    attributes {
+      src = Neos.Fusion:ResourceUri {
+        path = 'resource://VIVOMEDIA.Fusion.CacheVisualisation/Public/js/cachevisualisation.js'
+      }
+    }
+    @if.onlyRenderNotInBackend = ${!node.context.inBackend}
+  }
+}

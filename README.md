@@ -1,25 +1,25 @@
-# TypoScript Cache Visualisation
-Helps to debug cache configurations in [Neos TypoScript](https://github.com/neos/typoscript/).
+# Fusion Cache Visualisation
+Helps to debug cache configurations in [Neos Fusion](https://github.com/neos/typoscript/).
 
-This is just a debugging tool and highly recommended just to use in development context.
+This is just a debugging tool and highly recommended to use in development context only.
 
 ## What it provides
-This plugin add a wrapper around all cached and uncached segments to visualise them. Also it provides addional informations for each segement:
+This plugin adds a wrapper around all cached and uncached segments to visualise them. Also it provides additional information for each segement:
 
 Cached Segments
-* TypoScript path
+* Fusion path
 * Cache tags
 * Lifetime
 
 Uncached Segments
-* TypoScript path
+* Fusion path
 * Context variable names
 
 # Install
 ## Composer
 Install via composer as a dev package
 ```bash
-php composer.phar require --dev "vivomedia/typoscript-cachevisualisation" "~0.3"
+php composer.phar require --dev "vivomedia/fusion-cachevisualisation" "^1.0"
 ```
 
 ## Flow
@@ -28,17 +28,20 @@ After install clear the content cache of your flow/neos application.
 ./flow flow:cache:flush --force
 ```
 
+## jQuery
+The plugin uses jQuery. Please ensure that it's loaded early enough.
+
 # Configuration
-You can enable and disable the plugin within you `settings.yaml`
+You can enable and disable the plugin within your `Settings.yaml`
 
 ```yaml
 VIVOMEDIA:
-  TypoScript:
+  Fusion:
     CacheVisualisation:
-      enabled: TRUE # Or false
+      enabled: true # Or false
 ```
 
-Is is enabled by default for the development context.
+It is enabled by default for the development context.
 
 Please keep in mind to clear the cache after enabling/disabling the plugin.
 
