@@ -1,36 +1,31 @@
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function () {
+  var cacheVisualisations = document.querySelectorAll('div[data-vivomedia-cache-visualisation]');
+  [].forEach.call(cacheVisualisations, function(cacheVisualisationItem) {
 
-  $('div[data-vivomedia-cache-visualisation]').hover(
-    function() {
-      var container = $( this );
-      $('> .data-container', container).show();
-    },
-    function(){
-      var container = $( this );
-      $('> .data-container', container).hide();
-  });
+      var data = JSON.parse( cacheVisualisationItem.dataset.vivomediaCacheVisualisation );
 
+      var dataHtml = '<dl>';
+      for (var key in data) {
+          dataHtml += '<dt>' + key + '</dt>';
+          dataHtml += '<dd>' + JSON.stringify(data[key]) + '</dd>';
+      };
+      dataHtml += '</dl>';
 
-  $('div[data-vivomedia-cache-visualisation]').each(function () {
-    var wrapper = $(this);
-    var dataContainer = $('<div class="data-container"></div>');
-    wrapper.prepend(dataContainer);
+      // create data container
+      var dataContainer = document.createElement("div");
+      dataContainer.classList.add('data-container');
+      dataContainer.innerHTML = dataHtml
+      dataContainer.style.display = 'none'
 
-    var data = wrapper.data('vivomedia-cache-visualisation');
-    $.each(data, function(key, value){
-      dataContainer.append($('<label />').text(key));
-      if ($.isArray(value)) {
-        var list = $('<ul />');
-        $.each(value, function(arrayKey, arrayValue) {
-          list.append($('<li />').text(arrayValue));
-        });
-        dataContainer.append(list);
-      } else {
-        if (value == null) {
-          value = 'null';
-        }
-        dataContainer.append($('<p />').text(value));
+      cacheVisualisationItem.appendChild(dataContainer);
+
+      cacheVisualisationItem.onmouseover = function() {
+          dataContainer.style.display = 'block';
       }
-    });
+
+      cacheVisualisationItem.onmouseout = function(){
+          dataContainer.style.display = 'none';
+      }
+
   });
-})
+});
