@@ -33,7 +33,7 @@ class ContentCacheVisualisationAspect
     public function wrapContentCacheCachedSegment(JoinPointInterface $joinPoint)
     {
         $content = $joinPoint->getMethodArgument('content');
-        $path = $joinPoint->getMethodArgument('typoScriptPath');
+        $path = $joinPoint->getMethodArgument('fusionPath');
 
         $lifetime = null;
         if ($joinPoint->getMethodArgument('lifetime')) {
@@ -82,7 +82,7 @@ class ContentCacheVisualisationAspect
     public function wrapContentCacheUncachedSegment(JoinPointInterface $joinPoint)
     {
         $content = $joinPoint->getAdviceChain()->proceed($joinPoint);
-        $path = $joinPoint->getMethodArgument('typoScriptPath');
+        $path = $joinPoint->getMethodArgument('fusionPath');
 
         if (!$this->_checkBlacklistedPath($path)) {
             $parameter = [
