@@ -9,8 +9,8 @@
     }
   ],
   "require": {
-    "neos/flow": "^4.0.0",
-    "neos/fusion": "^3.0.0"
+    "neos/flow": "^4.0.0 || ^5.0.0",
+    "neos/fusion": "^3.0.0 || ^4.0.0"
   },
   "replace": {
     "vivomedia/typoscript-cachevisualisation": "self.version"
