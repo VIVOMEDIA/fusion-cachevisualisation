@@ -9,6 +9,7 @@ prototype(Page){
         }
       }
       @if.onlyRenderNotInBackend = ${!node.context.inBackend}
+      @if.isEnabled = ${Configuration.setting('VIVOMEDIA.Fusion.CacheVisualisation.enabled')}
     }
   }
 
@@ -21,5 +22,6 @@ prototype(Page){
       }
     }
     @if.onlyRenderNotInBackend = ${!node.context.inBackend}
+    @if.isEnabled = ${Configuration.setting('VIVOMEDIA.Fusion.CacheVisualisation.enabled')}
   }
 }
