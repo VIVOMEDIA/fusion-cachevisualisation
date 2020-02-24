@@ -1,4 +1,4 @@
-prototype(Page){
+prototype(Neos.Neos:Page){
   head {
     cacheVisualisationCss = Neos.Fusion:Tag {
       tagName = 'link'
