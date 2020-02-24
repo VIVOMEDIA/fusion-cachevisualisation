@@ -24,7 +24,7 @@ Uncached Segments
 ## Composer
 Install via composer as a dev package
 ```bash
-php composer.phar require --dev "vivomedia/fusion-cachevisualisation" "^1.0"
+php composer.phar require --dev "vivomedia/fusion-cachevisualisation"
 ```
 
 ## Flow
