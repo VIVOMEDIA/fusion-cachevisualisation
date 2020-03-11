@@ -1,5 +1,4 @@
-$(document).ready(function () {
-
+function initialize() {
   $('div[data-vivomedia-cache-visualisation]').hover(
     function() {
       var container = $( this );
@@ -33,4 +32,15 @@ $(document).ready(function () {
       }
     });
   });
-})
+}
+
+if (window.$) {
+  $(document).ready(initialize);
+} else {
+  var script = document.createElement('script');
+  script.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
+  script.setAttribute('integrity', 'sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=');
+  script.setAttribute('crossorigin', 'anonymous');
+  script.addEventListener('load', initialize);
+  document.head.appendChild(script);
+}
