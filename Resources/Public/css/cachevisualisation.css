@@ -1,6 +1,7 @@
 .vivomedia-cachevisualisation {
   min-width: 20px;
   min-height: 20px;
+  word-wrap: break-word;
 }
 
 .vivomedia-cachevisualisation.vivomedia-cachevisualisation-cached {
