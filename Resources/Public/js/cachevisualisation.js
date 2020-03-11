@@ -3,10 +3,13 @@ $(document).ready(function () {
   $('div[data-vivomedia-cache-visualisation]').hover(
     function() {
       var container = $( this );
+
+      $('body').css({ marginBottom: $('> .data-container', container).height() });
       $('> .data-container', container).show();
     },
     function(){
       var container = $( this );
+      $('body').css({ marginBottom: 0 });
       $('> .data-container', container).hide();
   });
 
