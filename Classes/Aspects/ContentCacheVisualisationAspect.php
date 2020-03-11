@@ -2,6 +2,7 @@
 
 namespace VIVOMEDIA\Fusion\CacheVisualisation\Aspects;
 
+use Neos\Cache\CacheAwareInterface;
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Aop\JoinPointInterface;
 use Neos\Flow\ObjectManagement\Configuration\Configuration;
@@ -47,11 +48,26 @@ class ContentCacheVisualisationAspect
                 'path' => $path,
                 'tags' => implode(',', $joinPoint->getMethodArgument('tags')),
                 'lifetime' => $lifetime,
+                'identifiers' => $this->getCacheIdentifiers($joinPoint->getMethodArgument('cacheIdentifierValues')),
             ];
             $content = $this->_wrapContent(self::TYPE_CACHED, $content, $parameter);
 
             $joinPoint->setMethodArgument('content', $content);
         }
+    }
+
+    private function getCacheIdentifiers(array $cacheIdentifierValues)
+    {
+        $strings = array_map(
+            function($value) {
+                if ($value instanceof CacheAwareInterface) {
+                    return $value->getCacheEntryIdentifier();
+                }
+                return (string) $value;
+            },
+            $cacheIdentifierValues
+        );
+        return json_encode($strings);
     }
 
     private function _checkBlacklistedPath($path)
