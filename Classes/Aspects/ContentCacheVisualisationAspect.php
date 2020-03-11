@@ -15,6 +15,7 @@ class ContentCacheVisualisationAspect
 {
     const TYPE_CACHED = 'cached';
     const TYPE_UNCACHED = 'uncached';
+    const TYPE_DYNAMIC = 'dynamic';
 
 
     /**
@@ -90,6 +91,30 @@ class ContentCacheVisualisationAspect
                 'context' => array_keys($joinPoint->getMethodArgument('contextVariables')),
             ];
             $content = $this->_wrapContent(self::TYPE_UNCACHED, $content, $parameter);
+        }
+
+        return $content;
+    }
+
+    /**
+     *
+     * @param JoinPointInterface $joinPoint The current join point
+     *
+     * @return mixed Result of the target method
+     * @Flow\Around("method(Neos\Fusion\Core\Cache\ContentCache->createDynamicCachedSegment()) && setting(VIVOMEDIA.Fusion.CacheVisualisation.enabled)")
+     */
+    public function wrapContentCacheDynamicSegment(JoinPointInterface $joinPoint)
+    {
+        $content = $joinPoint->getAdviceChain()->proceed($joinPoint);
+        $path = $joinPoint->getMethodArgument('fusionPath');
+
+        if (!$this->_checkBlacklistedPath($path)) {
+            $parameter = [
+                'path' => $path,
+                'context' => array_keys($joinPoint->getMethodArgument('contextVariables')),
+                'discriminator' => $joinPoint->getMethodArgument('cacheDiscriminator')
+            ];
+            $content = $this->_wrapContent(self::TYPE_DYNAMIC, $content, $parameter);
         }
 
         return $content;

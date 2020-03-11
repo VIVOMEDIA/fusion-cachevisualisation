@@ -13,6 +13,7 @@ VIVOMEDIA:
         itemClassName:
           cached: 'vivomedia-cachevisualisation-cached'
           uncached: 'vivomedia-cachevisualisation-uncached'
+          dynamic: 'vivomedia-cachevisualisation-dynamic'
       pathBlacklist:
         - 'root'
         - 'root<Neos.Fusion:Case>/default'
