@@ -12,12 +12,20 @@
   border: 2px solid red;
 }
 
+.vivomedia-cachevisualisation.vivomedia-cachevisualisation-dynamic {
+  border: 2px solid blue;
+}
+
 .vivomedia-cachevisualisation.vivomedia-cachevisualisation-cached > .data-container {
   background-color: green;
 }
 
 .vivomedia-cachevisualisation.vivomedia-cachevisualisation-uncached > .data-container {
   background-color: red;
+}
+
+.vivomedia-cachevisualisation.vivomedia-cachevisualisation-dynamic > .data-container {
+  background-color: blue;
 }
 
 .vivomedia-cachevisualisation .data-container {
