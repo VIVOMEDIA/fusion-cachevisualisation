@@ -3,6 +3,10 @@
 [![License](https://poser.pugx.org/vivomedia/fusion-cachevisualisation/license)](https://packagist.org/packages/vivomedia/fusion-cachevisualisation)
 [![Maintainability](https://api.codeclimate.com/v1/badges/7cf5fd14d617b5e8b136/maintainability)](https://codeclimate.com/github/vivomedia-de/fusion-cachevisualisation/maintainability)
 
+(!) This package is not supported anymore!
+
+Please use https://github.com/Flowpack/neos-debug which provides also a content cache visualisation.
+
 # Fusion Cache Visualisation
 Helps to debug cache configurations in [Neos Fusion](https://github.com/neos/typoscript/).
 
